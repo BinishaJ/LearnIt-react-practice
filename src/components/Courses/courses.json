@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Django",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "django.avif"
+  },
+  {
+    "title": "Postgresql",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "pg.webp"
+  },
+  {
+    "title": "Mongo DB",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "mongo.png"
+  },
+  {
+    "title": "JavaScript",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "js.png"
+  },
+  {
+    "title": "Django",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "django.avif"
+  },
+  {
+    "title": "Postgresql",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "pg.webp"
+  },
+  {
+    "title": "Mongo DB",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "mongo.png"
+  },
+  {
+    "title": "JavaScript",
+    "enrolled": 150,
+    "comments": 35,
+    "description": "Data science is a solid, rapidly growing field with plenty of  untapped potentials. LinkedIn's Emerging Jobs Report shows",
+    "image": "js.png"
+  }
+]
