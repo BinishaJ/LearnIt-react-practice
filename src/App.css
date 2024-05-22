@@ -61,6 +61,11 @@
   color: black;
 }
 
+.left-links {
+  text-decoration: none;
+  color: inherit;
+}
+
 .left-navbar-list {
   margin: 3rem 0;
   padding-right: 1rem;
@@ -213,7 +218,8 @@
   display: flex;
 }
 
-.add-button {
+.add-button,
+.courses-icon-button {
   display: flex;
   align-items: center;
   background-color: var(--primary);
@@ -222,6 +228,7 @@
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
+  justify-content: center;
   margin-right: 15px;
 }
 
@@ -232,15 +239,14 @@
 
 .courses-icon-button {
   background-color: #cee3fd;
-  border: none;
-  display: flex;
   text-align: center;
-  align-items: center;
-  justify-content: center;
   padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
   margin-right: 10px;
+}
+
+.add-button:hover,
+.courses-icon-button:hover {
+  box-shadow: 2px 1px 5px #bbcee7;
 }
 
 .courses-icon {
@@ -260,11 +266,22 @@
   border-radius: 15px;
 }
 
+.course-item:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 4px 2px #cdcdcd59;
+}
+
+.course-image-container {
+  position: relative;
+  height: 200px;
+}
+
 .course-image {
   width: 100%;
   object-fit: cover;
   height: 200px;
   border-radius: 15px 15px 0 0;
+  opacity: 0.9;
 }
 
 .course-content {
@@ -286,20 +303,30 @@
   cursor: pointer;
 }
 
+.course-button:hover {
+  background-color: #d4e1e6d6;
+}
+
 .play {
   background-color: #3468abc9;
   border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   height: 50px;
   width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
+}
+
+.course-image-container:hover .play,
+.play:hover {
+  background-color: #3468abf5;
+}
+
+.course-image-container:hover .course-image {
+  opacity: 1;
 }
 
 .play-icon {
@@ -341,6 +368,11 @@
 
 .arrow-active {
   color: var(--primary);
+}
+
+.no-courses {
+  margin-top: 2rem;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 1200px) {

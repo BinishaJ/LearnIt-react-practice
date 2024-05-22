@@ -7,7 +7,7 @@ const LeftNavbar = () => {
   const [menuClose, setMenuClose] = useState(false);
 
   return (
-    <div className={`left-navbar ${menuClose && "small-menu"}`}>
+    <div className={`left-navbar ${menuClose ? "small-menu" : ""}`}>
       <span className="left-icons-container">
         {!menuClose && (
           <a href="/">
