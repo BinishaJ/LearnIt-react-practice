@@ -1,14 +1,23 @@
+import React, { useContext } from "react";
 import { CiSearch } from "react-icons/ci";
-import { GoMail, GoBell } from "react-icons/go";
-import { IoSettingsOutline } from "react-icons/io5";
-import UserImage from "../assets/user.jpg";
+import { GoBell, GoMail } from "react-icons/go";
 import { IoIosArrowDown } from "react-icons/io";
+import { IoSettingsOutline } from "react-icons/io5";
+import { CourseContext } from "../App";
+import UserImage from "../assets/user.jpg";
 
-const TopNavbar = () => {
+const TopNavbar = ({ setSearchCourse }) => {
+  const searchCourse = useContext(CourseContext);
+
   return (
     <div className="navbar-container">
       <div className="search">
-        <input placeholder="Search" className="top-search" />
+        <input
+          placeholder="Search"
+          className="top-search"
+          value={searchCourse}
+          onChange={(e) => setSearchCourse(e.target.value)}
+        />
         <CiSearch className="search-icon" />
       </div>
 

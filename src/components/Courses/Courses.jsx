@@ -15,7 +15,6 @@ const Courses = () => {
       <div className="courses-header">
         <div>
           <h3>My Courses</h3>
-
           <p className="courses-welcome">Welcome to LearnIt My Courses page</p>
         </div>
 
