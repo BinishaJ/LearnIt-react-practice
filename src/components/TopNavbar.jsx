@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { GoBell, GoMail } from "react-icons/go";
 import { IoIosArrowDown } from "react-icons/io";
@@ -8,6 +8,25 @@ import UserImage from "../assets/user.jpg";
 
 const TopNavbar = ({ setSearchCourse }) => {
   const searchCourse = useContext(CourseContext);
+  const dropdownRef = useRef(null);
+  const [viewDropdown, setViewDropdown] = useState(false);
+
+  const clickDropdown = () => {
+    setViewDropdown(!viewDropdown);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setViewDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.body.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="navbar-container">
@@ -34,7 +53,16 @@ const TopNavbar = ({ setSearchCourse }) => {
 
         <img src={UserImage} className="user-icon" alt="User" />
 
-        <IoIosArrowDown className="top-icons" />
+        <div
+          ref={dropdownRef}
+          style={{ position: "relative", display: "flex" }}
+        >
+          <IoIosArrowDown className="top-icons" onClick={clickDropdown} />
+          <ul className={`profile-dropdown ${viewDropdown ? "show" : ""}`}>
+            <li className="dropdown-items">Profile</li>
+            <li className="dropdown-items">Account</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
