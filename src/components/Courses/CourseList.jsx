@@ -10,24 +10,47 @@ import courses from "./courses.json";
 const CourseList = () => {
   const searchCourse = useContext(CourseContext);
 
-  const [coursesList, setCoursesList] = useState(courses);
+  const [filteredList, setFilteredList] = useState([]);
+  const [activePage, setActivePage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+
+  const coursesPerPage = 5;
 
   useEffect(() => {
-    !searchCourse
-      ? setCoursesList(courses)
-      : setCoursesList(
-          courses.filter((c) =>
-            c.title.toLowerCase().includes(searchCourse.toLowerCase())
-          )
-        );
-  }, [searchCourse]);
+    if (!searchCourse) {
+      setFilteredList(
+        courses.slice(
+          (activePage - 1) * coursesPerPage,
+          (activePage - 1) * coursesPerPage + coursesPerPage
+        )
+      );
+      setTotalPages(Math.ceil(courses.length / coursesPerPage));
+    } else {
+      const filteredCourses = courses.filter((c) =>
+        c.title.toLowerCase().includes(searchCourse.toLowerCase())
+      );
+      setFilteredList(
+        filteredCourses.slice(
+          (activePage - 1) * coursesPerPage,
+          (activePage - 1) * coursesPerPage + coursesPerPage
+        )
+      );
+      setTotalPages(Math.ceil(filteredCourses.length / coursesPerPage));
+    }
+  }, [searchCourse, activePage, coursesPerPage]);
+
+  const paginationNumbers = [];
+
+  for (let i = 1; i <= totalPages; i++) {
+    paginationNumbers.push(i);
+  }
 
   return (
     <>
-      {coursesList.length ? (
+      {filteredList.length ? (
         <>
           <div className="course-list-container">
-            {coursesList.map((c, index) => (
+            {filteredList.map((c, index) => (
               <div className="course-item" key={index}>
                 <div className="course-image-container">
                   <img
@@ -76,16 +99,37 @@ const CourseList = () => {
               </div>
             ))}
           </div>
+
           <div className="course-pagination">
-            <FaArrowLeft className="arrow-button arrow-inactive" />
-            <p className="paginate active-paginate">1</p>
-            <p className="paginate">2</p>
-            <p className="paginate">3</p>
-            <p className="paginate">4</p>
-            <p className="paginate">5</p>
-            <p className="paginate">...</p>
-            <p className="paginate">9</p>
-            <FaArrowRight className="arrow-button arrow-active" />
+            <FaArrowLeft
+              className={`arrow-button ${
+                activePage === 1 ? "arrow-inactive" : "arrow-active"
+              }`}
+              onClick={() =>
+                activePage > 1 ? setActivePage(activePage - 1) : ""
+              }
+            />
+
+            {paginationNumbers.map((pageNumber) => (
+              <p
+                key={pageNumber}
+                className={`paginate ${
+                  activePage === pageNumber ? "active-paginate" : ""
+                }`}
+                onClick={() => setActivePage(pageNumber)}
+              >
+                {pageNumber}
+              </p>
+            ))}
+
+            <FaArrowRight
+              className={`arrow-button ${
+                activePage === totalPages ? "arrow-inactive" : "arrow-active"
+              }`}
+              onClick={() =>
+                activePage !== totalPages ? setActivePage(activePage + 1) : ""
+              }
+            />
           </div>
         </>
       ) : (

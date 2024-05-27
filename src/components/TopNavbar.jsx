@@ -59,6 +59,7 @@ const TopNavbar = ({ setSearchCourse }) => {
         >
           <IoIosArrowDown className="top-icons" onClick={clickDropdown} />
           <ul className={`profile-dropdown ${viewDropdown ? "show" : ""}`}>
+            <li className="dropdown-items">Courses</li>
             <li className="dropdown-items">Profile</li>
             <li className="dropdown-items">Account</li>
           </ul>

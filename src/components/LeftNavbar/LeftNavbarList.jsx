@@ -43,11 +43,11 @@ const LeftNavbarList = ({ menuClose }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 <rect
@@ -56,9 +56,9 @@ const LeftNavbarList = ({ menuClose }) => {
                   width="6"
                   height="4"
                   stroke="#000000"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></rect>
                 <rect
                   x="3"
@@ -66,9 +66,9 @@ const LeftNavbarList = ({ menuClose }) => {
                   width="8"
                   height="4"
                   stroke="#000000"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></rect>
                 <rect
                   x="7"
@@ -76,9 +76,9 @@ const LeftNavbarList = ({ menuClose }) => {
                   width="14"
                   height="4"
                   stroke="#000000"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></rect>
               </g>
             </svg>
